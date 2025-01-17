@@ -10,6 +10,9 @@ use {
         geyser_plugin_postgres::{GeyserPluginPostgresConfig, GeyserPluginPostgresError},
         postgres_client::postgres_client_account_index::TokenSecondaryIndexEntry,
     },
+    agave_geyser_plugin_interface::geyser_plugin_interface::{
+        GeyserPluginError, ReplicaAccountInfoV3, ReplicaBlockInfoV3, SlotStatus,
+    },
     chrono::Utc,
     crossbeam_channel::{bounded, Receiver, RecvTimeoutError, Sender},
     log::*,
@@ -18,9 +21,6 @@ use {
     postgres_client_block_metadata::DbBlockInfo,
     postgres_client_transaction::LogTransactionRequest,
     postgres_openssl::MakeTlsConnector,
-    solana_geyser_plugin_interface::geyser_plugin_interface::{
-        GeyserPluginError, ReplicaAccountInfoV3, ReplicaBlockInfoV3, SlotStatus,
-    },
     solana_measure::measure::Measure,
     solana_metrics::*,
     solana_sdk::timing::AtomicInterval,

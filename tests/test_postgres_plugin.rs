@@ -67,6 +67,7 @@ fn wait_for_next_snapshot(
         .get_validator_client(cluster.entry_point_info.pubkey())
         .unwrap();
     let last_slot = client
+        .rpc_client()
         .get_slot_with_commitment(CommitmentConfig::processed())
         .expect("Couldn't get slot");
 

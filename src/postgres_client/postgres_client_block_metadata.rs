@@ -5,12 +5,12 @@ use {
             postgres_client_transaction::DbReward, SimplePostgresClient, UpdateBlockMetadataRequest,
         },
     },
+    agave_geyser_plugin_interface::geyser_plugin_interface::{
+        GeyserPluginError, ReplicaBlockInfoV3,
+    },
     chrono::Utc,
     log::*,
     postgres::{Client, Statement},
-    solana_geyser_plugin_interface::geyser_plugin_interface::{
-        GeyserPluginError, ReplicaBlockInfoV3,
-    },
 };
 
 #[derive(Clone, Debug)]
